@@ -6,7 +6,7 @@ SRCS_BONUS =	ft_lstnew_bonus.c	ft_lstadd_front_bonus.c	ft_lstsize_bonus.c	ft_lst
 
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
-CC =    cc
+CC =    gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
@@ -17,25 +17,26 @@ RM =    rm -f
 all:	$(NAME)
 
 .c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+		@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 $(NAME):   ${OBJS}
-		ar -r ${NAME} ${OBJS}
+		@ar -r ${NAME} ${OBJS}
 
 clean:
-		${RM} ${OBJS} ${OBJS_BONUS}
+		@${RM} ${OBJS} ${OBJS_BONUS}
 
 fclean:	clean
-		${RM} ${NAME}
-		${RM} printf/*.o printf/*.a
+		@${RM} ${NAME}
+		@${RM} printf/*.o printf/*.a
 
 re:		fclean	all
 
 bonus:	all	${OBJS_BONUS}
-		ar -r ${NAME} ${OBJS_BONUS}
+		@ar -r ${NAME} ${OBJS_BONUS}
 
 extra:	bonus
-		make -C printf/
-		ar -r ${NAME} printf/*.o
+		@make -C printf/
+		@ar -r ${NAME} printf/*.o
+		@echo "libft.a was created correctly. You can use it without problem :)"
 
 .PHONY:	all	fclean	clean	re	bonus	extra

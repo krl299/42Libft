@@ -15,24 +15,25 @@ RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror
 
 .c.o:
-			${GCC} ${CFLAGS} -c $< -o ${<:.c=.o}
+			@${GCC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-			${ARRC} ${NAME} ${OBJS}
-			ranlib ${NAME}
+			@${ARRC} ${NAME} ${OBJS}
+			@ranlib ${NAME}
+
 all:		${NAME}
 
 bonus:	all
 
 clean:
-			${RM} ${OBJS}
+			@${RM} ${OBJS}
 
 fclean:		clean
-			${RM} ${NAME}
+			@${RM} ${NAME}
 
 re :		fclean all
 
 try:		${OBJS}
-			cc ${CFLAGS} ${OBJS} && ./a.out | cat -e
+			@cc ${CFLAGS} ${OBJS} && ./a.out | cat -e
 
 .PHONY:		bonus all clean fclean re try
