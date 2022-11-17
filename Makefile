@@ -14,8 +14,8 @@ NAME =  libft.a
 
 RM =    rm -f
 
-all:	$(NAME)
-
+all:	$(NAME)	
+	
 .c.o:
 		@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
@@ -26,7 +26,6 @@ clean:
 		@${RM} ${OBJS} ${OBJS_BONUS}
 
 fclean:	clean
-		@${RM} ${NAME}
 		@${RM} printf/*.o printf/*.a
 		@${RM} gnl/*.o
 
@@ -35,10 +34,12 @@ re:		fclean	all
 bonus:	all	${OBJS_BONUS}
 		@ar -r ${NAME} ${OBJS_BONUS}
 
-extra:	bonus
+extra:	bonus fclean
 		@make -C printf/
 		@make -C gnl/ bonus
 		@ar -r ${NAME} printf/*.o gnl/*.o
+		@make -C gnl/ clean_bonus
+		@make -C printf/ fclean
 		@echo "libft.a was created correctly. You can use it without problem :)"
 
 .PHONY:	all	fclean	clean	re	bonus	extra
