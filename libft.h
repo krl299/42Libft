@@ -6,7 +6,7 @@
 /*   By: cmoran-l <cmoran-l@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 09:04:41 by cmoran-l          #+#    #+#             */
-/*   Updated: 2022/09/28 14:43:57 by cmoran-l         ###   ########.fr       */
+/*   Updated: 2023/02/02 10:08:36 by cmoran-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /*--> Printf <--*/
-int ft_printf(const char *, ...);
+int		ft_printf(const char *str, ...);
 
 #endif
