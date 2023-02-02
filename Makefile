@@ -34,12 +34,10 @@ re:		fclean	all
 bonus:	all	${OBJS_BONUS}
 		@ar -r ${NAME} ${OBJS_BONUS}
 
-extra:	bonus fclean
+extra:	bonus
 		@make -C printf/
 		@make -C gnl/ bonus
 		@ar -r ${NAME} printf/*.o gnl/*.o
-		@make -C gnl/ clean_bonus
-		@make -C printf/ fclean
 		@echo "libft.a was created correctly. You can use it without problem :)"
 
 .PHONY:	all	fclean	clean	re	bonus	extra
