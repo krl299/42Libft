@@ -6,7 +6,7 @@
 /*   By: cmoran-l <cmoran-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 10:56:21 by cmoran-l          #+#    #+#             */
-/*   Updated: 2022/06/08 13:27:33 by cmoran-l         ###   ########.fr       */
+/*   Updated: 2023/03/24 18:15:20 by cmoran-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int		ft_fill_mem(char **mem, int fd);
 char	*ft_get_line(char **mem);
 void	ft_clean_mem(char **mem);
 //	<---	UTILS	--->
-char	*ft_strchr(const char *str, int c);
-char	*ft_strjoin(const char *s1, const char *s2);
-size_t	ft_strlen(char *str);
+char	*ft_gnl_strchr(const char *str, int c);
+char	*ft_gnl_strjoin(const char *s1, const char *s2);
+size_t	ft_gnl_strlen(char *str);
 size_t	ft_len_line(char *str);
-void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_gnl_memcpy(void *dst, const void *src, size_t n);
 #endif

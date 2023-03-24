@@ -6,14 +6,14 @@
 /*   By: cmoran-l <cmoran-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 12:12:26 by cmoran-l          #+#    #+#             */
-/*   Updated: 2022/06/08 13:26:18 by cmoran-l         ###   ########.fr       */
+/*   Updated: 2023/03/24 18:15:59 by cmoran-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
 // Computes the length of the string.
-size_t	ft_strlen(char *str)
+size_t	ft_gnl_strlen(char *str)
 {
 	size_t	count;
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(char *str)
 }
 
 // Locates the first occurrence od c in the string pointed to by str.
-char	*ft_strchr(const char *str, int c)
+char	*ft_gnl_strchr(const char *str, int c)
 {
 	char	*ptr;
 
@@ -41,7 +41,7 @@ char	*ft_strchr(const char *str, int c)
 }
 
 //
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_gnl_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	count;
 	char	*str1;
@@ -62,13 +62,13 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 // Allocates (with malloc(3)) and returns a new string,
 // which is the result of the concatenation of s1 and s2.
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_gnl_strjoin(const char *s1, const char *s2)
 {
 	size_t	size;
 	char	*ptr;
 	int		count;
 
-	size = ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1;
+	size = ft_gnl_strlen((char *)s1) + ft_gnl_strlen((char *)s2) + 1;
 	ptr = (char *)malloc(sizeof(char) * size);
 	if (!ptr)
 		return (ptr);

@@ -6,7 +6,7 @@
 /*   By: cmoran-l <cmoran-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:48:43 by cmoran-l          #+#    #+#             */
-/*   Updated: 2022/06/08 13:46:12 by cmoran-l         ###   ########.fr       */
+/*   Updated: 2023/03/24 18:16:42 by cmoran-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ int	ft_fill_mem(char **mem, int fd)
 
 	ft_clean_mem(mem);
 	ret = 1;
-	while (ret && !ft_strchr(*mem, '\n'))
+	while (ret && !ft_gnl_strchr(*mem, '\n'))
 	{
 		ret = read(fd, buffer, BUFFER_SIZE);
 		if (ret < 1)
 			return (ret);
 		buffer[ret] = 0;
 		tmp = *mem;
-		*mem = ft_strjoin(*mem, buffer);
+		*mem = ft_gnl_strjoin(*mem, buffer);
 		free(tmp);
 	}
 	return (ret);
@@ -71,9 +71,9 @@ void	ft_clean_mem(char **mem)
 		return ;
 	}
 	len = ft_len_line(*mem);
-	new_len = ft_strlen(&(*mem)[len]) + 1;
+	new_len = ft_gnl_strlen(&(*mem)[len]) + 1;
 	new_mem = (char *)malloc(sizeof(char) * new_len);
-	ft_memcpy(new_mem, &(*mem)[len], new_len);
+	ft_gnl_memcpy(new_mem, &(*mem)[len], new_len);
 	free(*mem);
 	*mem = new_mem;
 }

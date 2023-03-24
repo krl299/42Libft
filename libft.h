@@ -6,7 +6,7 @@
 /*   By: cmoran-l <cmoran-l@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 09:04:41 by cmoran-l          #+#    #+#             */
-/*   Updated: 2023/02/02 10:08:36 by cmoran-l         ###   ########.fr       */
+/*   Updated: 2023/03/24 18:14:45 by cmoran-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /*--> Printf <--*/
 int		ft_printf(const char *str, ...);
+
+/*--> Get next line <--*/
+char	*get_next_line(int fd);
 
 #endif
